@@ -3,34 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap" rel="stylesheet"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | 3-column preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+<style>
+  :root {
+    --Bright_orange: hsl(31, 77%, 52%);
+    --Dark_cyan: hsl(184, 100%, 22%);
+    --Very_dark_cyan: hsl(179, 100%, 13%);
+    --Transparent_white/*(paragraphs)*/: hsla(0, 0%, 100%, 0.75);
+    --Very_light_gray/*(background, headings, buttons)*/: hsl(0, 0%, 95%);
+    --lg: 36px;
+    --md: 14px;
+    --sm: 12px;
+  }
+  body {
+    /*font-family: 'Big Shoulders Display', cursive;
+    font-family: 'Lexend Deca', sans-serif;*/
+    margin: 0;
+  }
+  .global_container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Very_light_gray);
+  }
+  .card_container {
+    height: 600px;
+    width: 800px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
+  .card_global {
+    padding: 32px;
+  }
+  .card_global h1 {
+    font-size: var(--lg);
+    font-weight: bold;
+    font-family: 'Big Shoulders Display', cursive;
+    text-transform: uppercase;
+    color: var(--Very_light_gray);
+    border-radius: 28px;
+    padding: 16px 0 0 0;
+  }
+  .card_global p {
+    font-size: var(--md);
+    font-family: 'Lexend Deca', sans-serif;
+    color: var(--Transparent_white);
+    line-height: 28px;
+    padding: 16px 0 24px;
+    text-align: left;
+  }
+  .card_primary {
+    background-color: var(--Bright_orange);
+    border-radius: 28px 0 0 28px;
+  }
+  .card_secondary {
+    background-color: var(--Dark_cyan);
+  }
+  .card_tertiary {
+    background-color: var(--Very_dark_cyan);
+    border-radius: 0 28px 28px 0;
+  }
+  .global_button{
+    width: 75%;
+    height: 48px;
+    font-size: var(--md);
+    border-radius: 24px;
+    background-color: var(--Very_light_gray);
+    border: 2px solid var(--Very_light_gray);
+    font-family: 'Lexend Deca', sans-serif;
+    margin-top: 100px;
+    margin-bottom: 18px;
+    cursor: pointer;
+  }
+  .primary_button {
+    color: var(--Bright_orange);
+  }
+  .secondary_button {
+    color: var(--Dark_cyan);
+  }
+  .tertiary_button {
+    color: var(--Very_dark_cyan);
+  }
+  .global_button:hover {
+    background-color: transparent;
+    color: var(--Very_light_gray);
+  }
+  .attribution { 
+    padding-top: 25px;
+    font-size: 11px; 
+    text-align: center; 
+    font-family: 'Big Shoulders Display';
+    font-size: var(--md);
+  }
+  .attribution a { 
+    color: hsl(228, 45%, 44%); 
+  }
+  @media (max-width: 640px) {
+    .card_container {
+      height: 720px;
+      width: 80%;
+      flex-direction: column;
+    }
+    .card_primary {
+      border-radius: 28px 28px 0 0;
+    }
+    .card_tertiary {
+      background-color: var(--Very_dark_cyan);
+      border-radius: 0 0 16px 16px;
+    }
+    .attribution { 
+      visibility: hidden;
+    }
+  }
   </style>
 </head>
 <body>
-  
-  Sedans
-  Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city 
-  or on your next road trip.
-
-  SUVs
-  Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation 
-  and off-road adventures.
-
-  Luxury
-  Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury 
-  rental and arrive in style.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="global_container">
+    <div class="card_container">
+      <div class="card_primary card_global">
+        <img src="./images/icon-sedans.svg" alt="sedan img" class="card_img">
+        <h1>Sedans</h1>
+        <p>Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city 
+          or on your next road trip.</p>
+        <input type="submit" class="global_button primary_button" value="Learn More">
+       </div>
+      <div class="card_secondary card_global">
+        <img src="./images/icon-suvs.svg" alt="suv img" class="card_img">
+        <h1>SUVs</h1>
+        <p>Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation 
+          and off-road adventures.</p>
+        <input type="submit" class="global_button secondary_button" value="Learn More">
+       </div>
+      <div class="card_tertiary card_global">
+        <img src="./images/icon-luxury.svg" alt="luxury img" class="card_img">
+        <h1>Luxury</h1>
+        <p>Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury 
+          rental and arrive in style.</p>
+        <input type="submit" class="global_button tertiary_button" value="Learn More">
+       </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.instagram.com/imanol.aa/">Imanol Estevez</a>.
+    </div>
   </div>
+  
 </body>
 </html>
