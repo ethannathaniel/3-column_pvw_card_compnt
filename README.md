@@ -30,10 +30,6 @@ Desktop view;
 
  ![image text](./screenshots/sc-1.png)
 
-Tablet view;
-
- ![image text](./screenshots/sc-3.png)
-
 Mobile view;
 
  ![image text](./screenshots/sc-2.png)
